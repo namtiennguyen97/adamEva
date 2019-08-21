@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>eatApple</title>
+</head>
+<body>
+<input type="button" onclick="goiNephalem()" value="NamEatApple">
+<input type="button" onclick="goiny()" value="AnhEatApple">
+<input type="button" value="Your Apple Storage" onclick="storage()" style="color: red">
+<script>
+    //tao qua tao
+    let Apple = function(number){
+        this.number =number;
+        //get so luong tao
+        this.getApple = function () {
+            return this.number;
+        }
+        this.anTao = function (number) {
+            this.number = number;
+        }
+        this.increase = function () {
+            return this.number --;
+        }
+    };
+//tao human
+    let Human = function (name, gender, weight) {
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+        // ham get name
+        this.getName = function () {
+            return this.name;
+        };
+        //tang can
+//this.weight ++;
+        //ham set weight
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        }
+        //ham get weight
+        this.getWeight = function () {
+            return this.weight++;
+        };
+        this.getGender = function () {
+            return this.gender;
+        }
+    };
+    //khai bao lop nguoi
+    let nephalem = new Human("nam","male",59);
+    let anh = new Human("nguyen","female",54);
+    let tao = new Apple(10);
+
+    function goiNephalem() {
+        alert("Hi my name is"+ nephalem.getName()+", my gender is: "+ nephalem.getGender()+", my weight is: "+nephalem.getWeight());
+        alert("The apple still remmaining is: "+ tao.increase());
+    };
+    function goiny() {
+        alert("Hi my name is"+ anh.getName()+", my gender is: "+ anh.getGender()+", my weight is: "+anh.getWeight());
+        alert("The apple still remmaining is: "+ tao.increase());
+  
+    };
+    function storage() {
+alert("The number of apple remaining is: "+tao.getApple());
+    };
+
+</script>
+</body>
+</html>
